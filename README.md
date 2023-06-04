@@ -1,24 +1,39 @@
-# TimeZone-Converter
+# ZeitzoneConverter
 
-Dieser Code implementiert einen einfachen Zeitzonen-Konverter mit einer GUI, die auf Tkinter basiert. Der Benutzer kann eine Standard-Zeitzone (z.B. die Zeitzone seines Wohnortes) auswählen und eine zweite Zeitzone, in die er die Uhrzeit konvertieren möchte. Die aktuelle Zeit wird in beiden Zeitzonen angezeigt und kann durch einen Aktualisierungs-Button manuell aktualisiert werden.
+Dieses Programm ist ein einfacher Zeitzonen-Konverter, der mit der PyQt5-Bibliothek erstellt wurde. Es ermöglicht die Umrechnung der aktuellen Zeit von einer Standard-Zeitzone in eine ausgewählte Zeitzone.
 
-Benutzung:
-Um den Zeitzonen-Konverter zu verwenden, führen Sie die Datei "zeitzone_converter.py" in Python aus. Es öffnet sich ein Fenster mit einem Dropdown-Menü für die Standard-Zeitzone und ein weiteres Dropdown-Menü für die zweite Zeitzone. Wählen Sie die gewünschten Zeitzonen aus und klicken Sie auf "Aktualisieren", um die aktuelle Uhrzeit in beiden Zeitzonen anzuzeigen. Die Uhrzeit wird automatisch alle 10 Sekunden aktualisiert.
+## Installation
 
-Abhängigkeiten:
-Dieses Programm verwendet die folgenden Python-Module:
+Um das Programm auszuführen, müssen zunächst die erforderlichen Bibliotheken installiert werden. Die Installation kann mit dem Paketmanager `pip` erfolgen:
 
-datetime
-pytz
-tkinter
-tkinter.ttk
+`pip install pytz PyQt5`
 
-Bitte stellen Sie sicher, dass diese Module auf Ihrem System installiert sind, bevor Sie das Programm ausführen.
 
-Hinweise zur Zeitzone:
-Die verfügbaren Zeitzone-Optionen werden aus der pytz.common_timezones-Liste abgerufen. Wenn Sie eine benutzerdefinierte Zeitzone hinzufügen möchten, können Sie diese der Liste hinzufügen oder eine der folgenden Optionen verwenden:
+## Verwendung
 
-Einzelne Zeitzonen-Strings können direkt an die timezone-Funktion von pytz übergeben werden (z.B. timezone('US/Eastern')).
-Eine Liste von Strings mit Zeitzonen-Namen kann als values-Argument an das ttk.Combobox-Objekt übergeben werden (z.B. values=['US/Eastern', 'US/Central', 'US/Mountain', 'US/Pacific']).
+Das Programm kann durch Ausführen des Skripts `zeitzone_converter.py` gestartet werden. Dazu können Sie den folgenden Befehl in der Befehlszeile verwenden:
 
-!!Bitte beachten Sie, dass die Angabe von ungültigen oder nicht unterstützten Zeitzonen dazu führen kann, dass das Programm nicht ordnungsgemäß funktioniert.!!
+`python zeitzone_converter.py`
+
+
+Nach dem Starten des Programms wird ein Fenster geöffnet, das die aktuelle Zeit in der ausgewählten Standard-Zeitzone und die konvertierte Zeit in der ausgewählten Zeitzone anzeigt. Die Standard-Zeitzone ist standardmäßig auf "Europe/Berlin" eingestellt, kann jedoch über das Dropdown-Menü geändert werden. Die ausgewählte Zeitzone ist standardmäßig auf "UTC" eingestellt und kann ebenfalls über das Dropdown-Menü geändert werden.
+
+Um die angezeigten Zeiten zu aktualisieren, können Sie auf die Schaltfläche "Aktualisieren" klicken. Die Zeiten werden automatisch alle 1 Sekunde aktualisiert.
+
+## Beispiel
+
+Hier ist ein Beispiel, wie das Programm verwendet werden kann:
+
+1. Starten Sie das Programm mit dem Befehl `python zeitzone_converter.py`.
+2. Das Programm öffnet ein Fenster mit den Dropdown-Menüs für die Standard-Zeitzone und die ausgewählte Zeitzone.
+3. Wählen Sie Ihre gewünschten Zeitzonen aus den Dropdown-Menüs aus.
+4. Das Fenster zeigt die aktuelle Zeit in der Standard-Zeitzone und die konvertierte Zeit in der ausgewählten Zeitzone an.
+5. Die Zeiten werden automatisch alle 1 Sekunde aktualisiert.
+
+## Anmerkungen
+
+- Das Programm verwendet die `pytz`-Bibliothek, um auf eine umfangreiche Datenbank mit Zeitzoneninformationen zuzugreifen.
+- Die PyQt5-Bibliothek wird verwendet, um das GUI-Fenster zu erstellen und zu verwalten.
+- Die `datetime`- und `QtCore`-Module werden für die Zeitberechnungen und das Aktualisieren des GUI verwendet.
+
+Bitte stellen Sie sicher, dass Sie die erforderlichen Abhängigkeiten installiert haben, bevor Sie das Programm ausführen. Weitere Informationen zur Verwendung des Programms finden Sie in den Kommentaren im Quellcode.
